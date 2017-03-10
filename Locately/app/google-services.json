@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "985682353853",
+    "firebase_url": "https://fabric-d5eb2.firebaseio.com",
+    "project_id": "fabric-d5eb2",
+    "storage_bucket": "fabric-d5eb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985682353853:android:8c6fcc7ea7f5e357",
+        "android_client_info": {
+          "package_name": "com.reboot.locately"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985682353853-9nk07453gva0a4s8qu4lupl7dklsitms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN9Y6t2rcNs9EtBlG2Bs-aiUzZMEbSbG4"
+        },
+        {
+          "current_key": "AIzaSyA6SXGfKzmABR-UuqNBvoI0CIi6x6sE_Vw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985682353853-9nk07453gva0a4s8qu4lupl7dklsitms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
