@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new TwitterCore(authConfig), new Digits.Builder().build());
         setContentView(R.layout.activity_main);
-
+      //  Intent intent=new Intent(getApplicationContext(),Drawer.class);
+       // startActivity(intent);
+        finish();
         AuthCallback authCallback = new AuthCallback() {
             @Override
             public void success(DigitsSession session, String phoneNumber) {
