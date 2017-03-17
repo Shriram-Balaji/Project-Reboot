@@ -1,20 +1,29 @@
 package com.reboot.locately;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 public class Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    Fragment fragment1=null,fragment2=null,fragment3=null,fragment4=null;
+    public BottomNavigationView navigation;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +32,14 @@ public class Drawer extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+     /*   FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        }); */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +49,45 @@ public class Drawer extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mOnNavigationItemSelectedListener  = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment=null;
+                switch (item.getItemId()) {
+                    case R.id.my_circle:
+                        if(fragment1==null)
+                            fragment1=new MyCircle();
+                        fragment = fragment1;
+                        break;
+                    case R.id.add_friend:
+                        if(fragment2==null)
+                            fragment2 = new AddFriends();
+                        fragment = fragment2;
+                        break;
+                    case R.id.check_in:
+                        if(fragment3==null)
+                            fragment3 = new CheckIn();
+                        fragment = fragment3;
+                        break;
+                    case R.id.leave_circle:
+                        if(fragment4==null)
+                            fragment4 = new LeaveCircle();
+                        fragment = fragment4;
+                        break;
+                }
+                FragmentManager manager = getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.output, fragment);
+                transaction.commit();
+                return true;
+            }
+
+        };
+
+        navigation = (BottomNavigationView)findViewById(R.id.navigation_view);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     @Override

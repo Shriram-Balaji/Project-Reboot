@@ -2,18 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/my_circle"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home" />
+        android:title="MY CIRCLE" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="DashBoard" />
+        android:id="@+id/add_friend"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="ADD FRIEND" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/check_in"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="Notifications" />
+        android:title="CHECK-IN" />
 
+    <item
+        android:id="@+id/leave_circle"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="LEAVE CIRCLE" />
 </menu>
