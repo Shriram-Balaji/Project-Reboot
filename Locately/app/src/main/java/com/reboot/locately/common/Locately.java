@@ -1,4 +1,4 @@
-package com.reboot.locately;
+package com.reboot.locately.common;
 
 import android.app.Application;
 import android.content.Context;

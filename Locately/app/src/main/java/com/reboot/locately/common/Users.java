@@ -1,4 +1,4 @@
-package com.reboot.locately;
+package com.reboot.locately.common;
 
 
 public class Users {
@@ -8,7 +8,7 @@ public class Users {
     //This style of declaring objects for manipulating database is called a POJO.
     //POJOs are used by Firebase for interacting with the Key-Value pairs.
 
-    private double lattitde,longitde;
+    private double latitude,longitde;
 
     public Users(String password, String profileName){
         this.password=password;

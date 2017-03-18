@@ -1,22 +1,17 @@
-package com.reboot.locately;
+package com.reboot.locately.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MenuItem;
 
 import com.digits.sdk.android.AuthCallback;
 import com.digits.sdk.android.AuthConfig;
 import com.digits.sdk.android.Digits;
 import com.digits.sdk.android.DigitsException;
 import com.digits.sdk.android.DigitsSession;
+import com.reboot.locately.R;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
 
@@ -40,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new TwitterCore(authConfig), new Digits.Builder().build());
         setContentView(R.layout.activity_main);
-        Intent intent=new Intent(getApplicationContext(),Drawer.class);
-        startActivity(intent);
-        finish();
+
         AuthCallback authCallback = new AuthCallback() {
             @Override
             public void success(DigitsSession session, String phoneNumber) {
                 SharedPreferences settings = getSharedPreferences("Fabrics", 0);
                 SharedPreferences.Editor editor = settings.edit();
-                boolean login = settings.getBoolean("login", true);
+
+                //always set the boolean to false initally
+                boolean login = settings.getBoolean("login", false);
                 editor.commit();
                 //check whether user logged out or not
                 if (login) {

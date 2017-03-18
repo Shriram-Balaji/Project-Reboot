@@ -1,4 +1,4 @@
-package com.reboot.locately;
+package com.reboot.locately.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.reboot.locately.R;
+import com.reboot.locately.common.Users;
 
 public class Register extends AppCompatActivity {
 

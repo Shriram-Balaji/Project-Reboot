@@ -1,4 +1,4 @@
-package com.reboot.locately;
+package com.reboot.locately.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,8 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.reboot.locately.R;
 
-public class LeaveCircle extends Fragment {
+
+public class MyCircle extends Fragment {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +23,7 @@ public class LeaveCircle extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_leave_circle, container, false);
+        return inflater.inflate(R.layout.fragment_my_circle, container, false);
     }
 
 }
