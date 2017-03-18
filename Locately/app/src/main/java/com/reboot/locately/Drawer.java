@@ -21,7 +21,8 @@ import android.view.View;
 
 public class Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Fragment fragment1=null,fragment2=null,fragment3=null,fragment4=null;
+    Fragment fragment1=null,fragment2=null,fragment3=null,fragment4=null,fragment5=null,fragment6=null,fragment7=null,fragment8=null,fragment9=null,fragment10=null;
+    Fragment fragment=null;
     public BottomNavigationView navigation;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
 
@@ -54,7 +55,7 @@ public class Drawer extends AppCompatActivity
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment=null;
+
                 switch (item.getItemId()) {
                     case R.id.my_circle:
                         if(fragment1==null)
@@ -107,20 +108,20 @@ public class Drawer extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -130,18 +131,39 @@ public class Drawer extends AppCompatActivity
 
         if (id == R.id.nav_profile) {
             // Handle the camera action
+            if(fragment5==null)
+                fragment5=new NavigatorProfile();
+            fragment = fragment5;
+
         } else if (id == R.id.nav_new_circle) {
-
-        } else if (id == R.id.nav_join_circle) {
-
-        } else if (id == R.id.nav_leave_circle) {
-
-        } else if (id == R.id.nav_messages) {
-
-        } else if (id == R.id.nav_settings) {
+            if(fragment6==null)
+                fragment6=new NavigatorNewCircle();
+            fragment = fragment6;
 
         }
+        else if (id == R.id.nav_invitation) {
+            if(fragment7==null)
+                fragment7=new NavigatorInvitation();
+            fragment = fragment7;
 
+        } else if (id == R.id.nav_messages) {
+            if(fragment8==null)
+                fragment8=new NavigatorMessage();
+            fragment = fragment8;
+
+        } else if (id == R.id.nav_settings) {
+            if(fragment9==null)
+                fragment9=new NavigatorSetting();
+            fragment = fragment9;
+
+        }  else if (id==R.id.nav_logout){
+            finish();
+            return true;
+        }
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.output, fragment);
+        transaction.commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

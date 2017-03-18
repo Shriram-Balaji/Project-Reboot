@@ -11,13 +11,9 @@
             android:icon="@mipmap/ic_create"
             android:title="Create New Circle " />
         <item
-            android:id="@+id/nav_join_circle"
+            android:id="@+id/nav_invitation"
             android:icon="@mipmap/ic_join"
-            android:title="Join an Existing Circle" />
-        <item
-            android:id="@+id/nav_leave_circle"
-            android:icon="@drawable/ic_highlight_off_red_900_24dp"
-            android:title="Leave a Circle" />
+            android:title="Invitation" />
         <item
             android:id="@+id/nav_messages"
             android:icon="@drawable/ic_speaker_notes_teal_800_24dp"
@@ -26,6 +22,10 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_blue_grey_800_24dp"
             android:title="Settings" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_highlight_off_red_900_24dp"
+            android:title="Logout" />
     </group>
 
 
