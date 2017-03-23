@@ -1,5 +1,6 @@
 package com.reboot.locately.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.reboot.locately.fragment.LeaveCircle;
 import com.reboot.locately.R;
@@ -21,19 +23,28 @@ import com.reboot.locately.fragment.AddFriends;
 import com.reboot.locately.fragment.CheckIn;
 import com.reboot.locately.fragment.MyCircle;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Fragment fragment1=null,fragment2=null,fragment3=null,fragment4=null;
     public BottomNavigationView navigation;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
-
+    @BindView(R.id.logo_app_name)
+    TextView mLogoTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        Typeface logoTypeface = Typeface.createFromAsset(getResources().getAssets(),"Pattaya-Regular.ttf");
+        mLogoTextView.setTypeface(logoTypeface);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -43,44 +54,56 @@ public class Drawer extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         mOnNavigationItemSelectedListener  = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment=null;
-                switch (item.getItemId()) {
-                    case R.id.my_circle:
-                        if(fragment1==null)
-                            fragment1=new MyCircle();
-                        fragment = fragment1;
-                        break;
-                    case R.id.add_friend:
-                        if(fragment2==null)
-                            fragment2 = new AddFriends();
-                        fragment = fragment2;
-                        break;
-                    case R.id.check_in:
-                        if(fragment3==null)
-                            fragment3 = new CheckIn();
-                        fragment = fragment3;
-                        break;
-                    case R.id.leave_circle:
-                        if(fragment4==null)
-                            fragment4 = new LeaveCircle();
-                        fragment = fragment4;
-                        break;
-                }
-                FragmentManager manager = getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.output, fragment);
-                transaction.commit();
-                return true;
+                selectFragment(item);
+                return false;
             }
 
         };
 
         navigation = (BottomNavigationView)findViewById(R.id.navigation_view);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        Menu menu = navigation.getMenu();
+        selectFragment(menu.getItem(0));
+    }
+
+    protected void selectFragment(MenuItem item){
+        item.setChecked(true);
+        Fragment fragment=null;
+        switch (item.getItemId()) {
+            case R.id.my_circle:
+                if(fragment1==null)
+                    fragment1=new MyCircle();
+                fragment = fragment1;
+                break;
+            case R.id.add_friend:
+                if(fragment2==null)
+                    fragment2 = new AddFriends();
+                fragment = fragment2;
+                break;
+            case R.id.check_in:
+                if(fragment3==null)
+                    fragment3 = new CheckIn();
+                fragment = fragment3;
+                break;
+
+
+
+//                    case R.id.leave_circle:
+//                        if(fragment4==null)
+//                            fragment4 = new LeaveCircle();
+//                        fragment = fragment4;
+//                        break;
+        }
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.main_container, fragment);
+        transaction.commit();
     }
 
     @Override

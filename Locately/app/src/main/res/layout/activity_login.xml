@@ -13,6 +13,7 @@
         android:background="#000"
         android:alpha="0.4"
         />
+
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
@@ -33,7 +34,6 @@
         android:layout_above="@+id/input_layout_pass"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="20dp"
         android:hint="Username"
         app:hintAnimationEnabled="true"
         android:textColorHint="@color/greyText"
@@ -46,8 +46,14 @@
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-android:padding="15dp"
+        android:background="@drawable/input_circled"
         android:ems="10"
+        android:layout_marginTop="10dp"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+
         android:id="@+id/name" />
     </android.support.design.widget.TextInputLayout>
 
@@ -64,7 +70,7 @@ android:padding="15dp"
         app:hintEnabled="true"
         android:textColorHint="@color/white"
         app:hintAnimationEnabled="true"
-        android:padding="10dp"
+        android:layout_marginTop="10dp"
 
         >
 
@@ -72,12 +78,14 @@ android:padding="15dp"
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_marginTop="10dp"
             android:ems="10"
             android:background="@drawable/input_circled"
             android:textColorHint="@color/greyText"
             android:inputType="textPassword"
+            android:paddingTop="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
              />
     </android.support.design.widget.TextInputLayout>
 
@@ -85,7 +93,7 @@ android:padding="15dp"
         android:text="Login"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_circled"
+        android:background="@drawable/btn_rounded_edges"
         android:textColor="@color/white"
         android:id="@+id/button3"
         android:layout_below="@+id/input_layout_pass"

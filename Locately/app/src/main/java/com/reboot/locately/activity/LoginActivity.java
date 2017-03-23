@@ -10,18 +10,21 @@ import android.widget.TextView;
 
 import com.reboot.locately.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class LoginActivity extends Activity {
 
-    TextView mAppName;
-    EditText mUsername,mPassword;
+    @BindView(R.id.name) EditText mUsername;
+    @BindView(R.id.password) EditText mPassword;
+    @BindView(R.id.app_name) TextView mAppName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
         mAppName = (TextView)findViewById(R.id.app_name);
-        mUsername = (EditText)findViewById(R.id.name);
-        mPassword = (EditText)findViewById(R.id.password);
         Typeface typeface = Typeface.createFromAsset(getResources().getAssets(),"Pattaya-Regular.ttf");
         mAppName.setTypeface(typeface);
     }

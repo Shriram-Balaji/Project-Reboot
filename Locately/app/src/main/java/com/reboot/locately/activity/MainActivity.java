@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                  //  Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), Drawer.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("phone", phoneNumber);
                     intent.putExtras(bundle);

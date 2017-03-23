@@ -17,4 +17,9 @@ public class Locately extends Application{
         MultiDex.install(this);
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        FontChangeCrawler.overrideFont(getApplicationContext(), "SERIF", "Proxima.ttf");
+    }
 }

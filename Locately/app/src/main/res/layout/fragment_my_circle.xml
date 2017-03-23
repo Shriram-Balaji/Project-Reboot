@@ -1,14 +1,72 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayoutReport"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.reboot.locately.fragment.MyCircle"
-    android:background="#ffffff">
+>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <FrameLayout
+        android:id="@+id/map_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="MyCircle" />
+        android:layout_height="290dp"
+        android:layout_above="@+id/bottom_sheet_scroll"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/lightblue"
 
-</FrameLayout>
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map Fragment"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        </FrameLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/bottom_sheet_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/white"
+        android:clipToPadding="true"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+        <include layout="@layout/card_friend_info" />
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/formViewPager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="225dp"-->
+        <!--android:paddingTop="20dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/actionButton"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_marginBottom="220dp"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+
+</android.support.design.widget.CoordinatorLayout>

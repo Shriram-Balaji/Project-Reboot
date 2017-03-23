@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_account_circle_deep_purple_a700_48dp"
+        android:padding="15dp"
+        android:id="@+id/friend_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/friend_name"
+        android:text="SHRIRAM BALAJI"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/textColorPrimary"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/friend_icon"
+        android:layout_toEndOf="@+id/friend_icon"
+        android:layout_alignBottom="@+id/friend_icon" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_battery_charging_60_green_a400_24dp"
+        android:rotation="90"
+        android:layout_toRightOf="@+id/friend_name"
+        android:padding="10dp"
+        android:id="@+id/friend_battery"
+        android:layout_alignBottom="@+id/friend_name"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/friend_battery"
+        android:id="@+id/friend_battery_percentage"
+        android:paddingTop="20dp"
+        android:textSize="15sp"
+        android:paddingBottom="20dp"
+        android:textColor="@color/black"
+        android:text="53 %"
+        android:layout_marginTop="10dp"
+        android:layout_alignBottom="@+id/friend_battery"
+        android:layout_alignParentTop="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_message_white_18dp"
+        android:background="@drawable/msg_button_background"
+        android:padding="10dp"
+        android:id="@+id/messageButton"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/friend_name"
+        android:layout_toRightOf="@+id/friend_icon"
+        android:layout_toEndOf="@+id/friend_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MESSAGE"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="@color/darker_gray"
+        android:padding="10dp"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/messageButton"
+        android:layout_toRightOf="@+id/friend_icon" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_call_white_18dp"
+        android:background="@drawable/call_button_background"
+        android:padding="10dp"
+        android:foregroundGravity="center"
+        android:id="@+id/callButton"
+        android:layout_below="@+id/friend_name"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CALL"
+        android:textColor="@color/darker_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/callButton"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_navigation_blue_18dp"
+        android:background="@drawable/circle_border"
+        android:padding="10dp"
+        android:id="@+id/navigateButton"
+        android:layout_below="@+id/friend_battery"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAVIGATE"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/darker_gray"
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/textView6"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/friend_name"
+        android:layout_toEndOf="@+id/friend_name" />
+
+
+</RelativeLayout>
