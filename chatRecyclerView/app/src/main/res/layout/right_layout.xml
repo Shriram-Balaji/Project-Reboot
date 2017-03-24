@@ -12,11 +12,10 @@
         android:gravity="fill"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="15dp"
         android:maxWidth="220dp"
         android:paddingEnd="15dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
         android:background="@drawable/ic_right_chat_bubble"/>
 </RelativeLayout>
