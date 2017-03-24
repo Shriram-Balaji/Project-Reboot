@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final ArrayList<Boolean> sent=new ArrayList<Boolean>();
         final ArrayList<String> messages=new ArrayList<String>();
-        messages.add("hi");
+        messages.add("hi");   //these will be the only received message
+        sent.add(false);
+        messages.add("how are you?");
         sent.add(false);
         RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recycler_view);
         final RecyclerAdapter adapter=new RecyclerAdapter(sent,messages);
@@ -31,9 +33,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText msg=(EditText)findViewById(R.id.messageEditText);
-                messages.add(msg.getText().toString());
-                sent.add(true);
-                adapter.notifyDataSetChanged();
+                if(!msg.getText().toString().equals("")&&msg.getText().toString().length()<150) {
+                    messages.add(msg.getText().toString());
+                    sent.add(true);
+                    adapter.notifyDataSetChanged();
+                    msg.setText("");
+                }
             }
         });
     }
