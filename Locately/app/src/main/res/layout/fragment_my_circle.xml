@@ -1,37 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorLayoutReport"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 >
 
 
-
-    <FrameLayout
-        android:id="@+id/map_container"
-        android:layout_width="match_parent"
+    <include
+        layout="@layout/map_view"
         android:layout_height="290dp"
-        android:layout_above="@+id/bottom_sheet_scroll"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/lightblue"
-
-
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Map Fragment"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textSize="30sp"/>
-
-        </FrameLayout>
+        android:layout_width="match_parent"
+        android:layout_marginTop="?actionBarSize"/>
 
 
     <android.support.v4.widget.NestedScrollView
