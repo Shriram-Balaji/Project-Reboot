@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.reboot.locately.R;
 import com.reboot.locately.fragment.AddFriends;
+import com.reboot.locately.fragment.AllMessages;
 import com.reboot.locately.fragment.CheckIn;
 import com.reboot.locately.fragment.MyCircle;
 
@@ -155,7 +156,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_leave_circle) {
 
         } else if (id == R.id.nav_messages) {
-
+            Fragment fragment = new AllMessages();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.main_container, fragment);
+            transaction.commit();
         } else if (id == R.id.nav_settings) {
 
         }
