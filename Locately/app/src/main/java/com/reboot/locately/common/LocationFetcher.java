@@ -27,61 +27,80 @@ public class LocationFetcher extends Application {
 
     Context context;
     Double lat, lon = 0d;
+    Map<String, Object> map = new HashMap<>();
 
     public LocationFetcher(Context context) {
         this.context = context;
     }
 
-    public Map<String, Double> fetchCellLocation() {
+    public void fetchCellLocation() {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
-        GsmCellLocation loc = (GsmCellLocation) tm.getCellLocation();
-        Map<String, Double> map = new HashMap<>();
+        if (tm.getNetworkType() == TelephonyManager.PHONE_TYPE_GSM) {
+            GsmCellLocation loc = (GsmCellLocation) tm.getCellLocation();
+            if (loc != null) {
+                int cellId = loc.getCid();
+                int lac = loc.getLac();
+                String operatorCode = tm.getNetworkOperator();
+                Log.d("cid", String.valueOf(cellId));
+                Log.d("lac", String.valueOf(lac));
+                Log.d("opcode", operatorCode);
+                String opcode = String.valueOf(operatorCode);
+                final String operatorName = tm.getNetworkOperatorName();
 
-        int cellId = loc.getCid();
-        int lac = loc.getLac();
-        String operatorCode = tm.getNetworkOperator();
-        Log.d("cid", String.valueOf(cellId));
-        Log.d("lac", String.valueOf(lac));
-        Log.d("opcode", operatorCode);
-        String opcode = String.valueOf(operatorCode);
-        int mcc = Integer.parseInt(opcode.substring(0, 3));
-        int mnc = Integer.parseInt(opcode.substring(3));
+                int mcc = Integer.parseInt(opcode.substring(0, 3));
+                int mnc = Integer.parseInt(opcode.substring(3));
 
         /* volley json GET request to opencellid.org */
-        RequestQueue queue = Volley.newRequestQueue(context);
-        final String url = "https://opencellid.org/cell/get?key=671ff9d8-2532-4319-a863-ac7da7520cfd&mcc=" + mcc + "&mnc=" + mnc + "&lac=" + lac + "&cellid=" + cellId + "&format=json";
-        Log.d("URL", String.valueOf(url));
+                RequestQueue queue = Volley.newRequestQueue(context);
+                final String url = "https://opencellid.org/cell/get?key=671ff9d8-2532-4319-a863-ac7da7520cfd&mcc=" + mcc + "&mnc=" + mnc + "&lac=" + lac + "&cellid=" + cellId + "&format=json";
+                Log.d("URL", String.valueOf(url));
 
-        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // display response
-                        try {
-                            lat = response.getDouble("lat");
-                            lon = response.getDouble("lon");
-                            Log.d("Latitude", String.valueOf(lat));
-                            Log.d("Longitude", String.valueOf(lon));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    lat = response.getDouble("lat");
+                                    lon = response.getDouble("lon");
+                                    Log.d("Latitude", String.valueOf(lat));
+                                    Log.d("Longitude", String.valueOf(lon));
+                                    map.put("operator_name", operatorName);
+                                    map.put("latitude", lat);
+                                    map.put("longitude", lon);
+
+
+                                    //TODO
+
+
+                                    Log.d("map", String.valueOf(map));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                Log.d("Response", response.toString());
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.d("Error.Response", error.getMessage());
+                            }
                         }
-                        Log.d("Response", response.toString());
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("Error.Response", error.getMessage());
-                    }
-                }
-        );
-        queue.add(getRequest);
-        map.put("Latitude", lat);
+                );
+                queue.add(getRequest);
+            }
 
-        return map;
+        }
+//
+//
+//
+//        else if(tm.getNetworkType() == TelephonyManager.PHONE_TYPE_CDMA){
+//
+//            CdmaCellLocation loc = (CdmaCellLocation)tm.getCellLocation();
+//            int baseStationId = loc.getBaseStationId();
+//            loc.getNetworkId();
+//        }
+//        CdmaCellLocation loccdma = (CdmaCellLocation) tm.getCellLocation();
 
     }
-
-
 }
 

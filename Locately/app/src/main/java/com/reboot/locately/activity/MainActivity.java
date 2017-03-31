@@ -1,10 +1,18 @@
 package com.reboot.locately.activity;
 
+import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,12 +21,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.MapsInitializer;
 import com.reboot.locately.R;
+import com.reboot.locately.common.LocationFetcher;
 import com.reboot.locately.fragment.AddFriends;
 import com.reboot.locately.fragment.CheckIn;
 import com.reboot.locately.fragment.MyCircle;
@@ -28,11 +38,12 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Fragment fragment1=null,fragment2=null,fragment3=null,fragment4=null;
     public BottomNavigationView navigation;
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
+    Fragment fragment1 = null, fragment2 = null, fragment3 = null, fragment4 = null;
     @BindView(R.id.logo_app_name)
     TextView mLogoTextView;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        Typeface logoTypeface = Typeface.createFromAsset(getResources().getAssets(),"Pattaya-Regular.ttf");
+        Typeface logoTypeface = Typeface.createFromAsset(getResources().getAssets(), "Pattaya-Regular.ttf");
         mLogoTextView.setTypeface(logoTypeface);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -54,8 +65,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        mOnNavigationItemSelectedListener  = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -65,8 +75,62 @@ public class MainActivity extends AppCompatActivity
 
         };
 
-        navigation = (BottomNavigationView)findViewById(R.id.navigation_view);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation_view);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
+//        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+        LocationFetcher locationFetcher = new LocationFetcher(this);
+        locationFetcher.fetchCellLocation();
+        // Battery status receiver
+        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        BroadcastReceiver b = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+                boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                        status == BatteryManager.BATTERY_STATUS_FULL;
+                int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+                int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+                float batteryPct = level / (float) scale;
+
+                int chargePlug = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
+                boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
+                boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
+                Log.d("status", String.valueOf(status));
+                Log.d("level", String.valueOf(level));
+                Log.d("usbcharge", String.valueOf(usbCharge));
+                Log.d("isCharging", String.valueOf(isCharging));
+                Log.d("batterypct", String.valueOf(batteryPct));
+            }
+        };
+        Intent intent = this.registerReceiver(b, ifilter);
+//        int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+//        boolean isCharging = false;
+//        if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
+//            Toast.makeText(this, "The battery is charging.", Toast.LENGTH_LONG).show();
+//            isCharging = true;
+//        } else if (status == BatteryManager.BATTERY_STATUS_DISCHARGING) {
+//            Toast.makeText(this, "The battery is discharging.", Toast.LENGTH_LONG).show();
+//            isCharging = false;
+//        } else if (status == BatteryManager.BATTERY_STATUS_FULL) {
+//            Toast.makeText(this, "The battery is full.", Toast.LENGTH_LONG).show();
+//            isCharging = true;
+//        }
+//        boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+//                status == BatteryManager.BATTERY_STATUS_FULL;
+//        int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+//        int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+//        float batteryPct = level / (float) scale;
+//
+//        int chargePlug = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
+//        boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
+//        boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
+//        Log.d("status", String.valueOf(status));
+//        Log.d("level", String.valueOf(level));
+//        Log.d("usbcharge", String.valueOf(usbCharge));
+//        Log.d("isCharging", String.valueOf(isCharging));
+//        Log.d("batterypct", String.valueOf(batteryPct));
 
         MapsInitializer.initialize(this);
 
@@ -74,26 +138,48 @@ public class MainActivity extends AppCompatActivity
         selectFragment(menu.getItem(0));
     }
 
-    protected void selectFragment(MenuItem item){
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1:   // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    LocationFetcher loc = new LocationFetcher(getApplicationContext());
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                return;
+        }
+        // other 'case' lines to check for other
+        // permissions this app might request
+    }
+
+
+    // other 'case' lines to check for other
+    // permissions this app might request
+
+
+    protected void selectFragment(MenuItem item) {
         item.setChecked(true);
-        Fragment fragment=null;
+        Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.my_circle:
-                if(fragment1==null)
-                    fragment1=new MyCircle();
+                if (fragment1 == null)
+                    fragment1 = new MyCircle();
                 fragment = fragment1;
                 break;
             case R.id.add_friend:
-                if(fragment2==null)
+                if (fragment2 == null)
                     fragment2 = new AddFriends();
                 fragment = fragment2;
                 break;
             case R.id.check_in:
-                if(fragment3==null)
+                if (fragment3 == null)
                     fragment3 = new CheckIn();
                 fragment = fragment3;
                 break;
-
 
 
 //                    case R.id.leave_circle:
