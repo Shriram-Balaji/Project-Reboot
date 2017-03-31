@@ -6,8 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 selectFragment(item);
-                return false;
+                return true;
             }
 
         };
@@ -69,7 +67,6 @@ public class MainActivity extends AppCompatActivity
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         MapsInitializer.initialize(this);
-
         Menu menu = navigation.getMenu();
         selectFragment(menu.getItem(0));
     }
@@ -82,16 +79,22 @@ public class MainActivity extends AppCompatActivity
                 if(fragment1==null)
                     fragment1=new MyCircle();
                 fragment = fragment1;
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container,fragment).commit();
                 break;
+
             case R.id.add_friend:
                 if(fragment2==null)
                     fragment2 = new AddFriends();
                 fragment = fragment2;
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container,fragment).commit();
+
                 break;
+
             case R.id.check_in:
                 if(fragment3==null)
                     fragment3 = new CheckIn();
                 fragment = fragment3;
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container,fragment).commit();
                 break;
 
 
@@ -102,10 +105,7 @@ public class MainActivity extends AppCompatActivity
 //                        fragment = fragment4;
 //                        break;
         }
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.main_container, fragment);
-        transaction.commit();
+
     }
 
     @Override

@@ -184,11 +184,8 @@ public class MyCircle extends Fragment implements OnMapReadyCallback{
     }
 
 
-
     private void enableMyLocation() {
-
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
-
                 != PackageManager.PERMISSION_GRANTED) {
             //Get Permissions if not provided
             if (!ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(),
