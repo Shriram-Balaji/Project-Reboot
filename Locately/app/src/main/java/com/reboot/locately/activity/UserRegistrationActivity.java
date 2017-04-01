@@ -48,7 +48,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         final SharedPreferences user_prefs = getSharedPreferences(USER_DETAILS, MODE_PRIVATE);
 
 
-        if(!user_prefs.getBoolean("login", false)){
+        if(user_prefs.getBoolean("login", false)){
             goToMainActivity();
         }
 
@@ -124,18 +124,12 @@ public class UserRegistrationActivity extends AppCompatActivity {
                 Digits.authenticate(config);
             }
         });
-
-
-
-
     }
-
 
     public void goToMainActivity(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         finish();
-
     }
 
 
