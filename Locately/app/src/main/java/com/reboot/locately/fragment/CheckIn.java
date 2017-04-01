@@ -36,6 +36,7 @@ public class CheckIn extends Fragment {
     private LocationManager locationManager;
     //private LocationListener locationListener;
     TextView tv;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,60 +46,40 @@ public class CheckIn extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final TextView tv=(TextView)getView().findViewById(R.id.textView4);
+        View view = inflater.inflate(R.layout.fragment_check_in, container, false);
+        final TextView tv = (TextView)view.findViewById(R.id.textView4);
         locationManager = (LocationManager) getActivity().getSystemService(LOCATION_SERVICE);
-        MyLoc.setOnClickListener(new View.OnClickListener() {
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+
+            return view;
+        }
+      LocationListener locationListener = new LocationListener() {
             @Override
-            public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= 23) {
-                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                        requestPermissions(new String[]{
-                                Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
-                                Manifest.permission.INTERNET
-                        }, 10);
-
-                        return;
-                    }
-                }
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
-                    @Override
-                    public void onLocationChanged(Location location) {
-                         converttoaddress(location);
-                    }
-
-                    @Override
-                    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                    }
-
-                    @Override
-                    public void onProviderEnabled(String provider) {
-
-                    }
-
-                    @Override
-                    public void onProviderDisabled(String provider) {
-
-                    }
-                });
+            public void onLocationChanged(Location location) {
+                Log.d("lat", String.valueOf(location.getLatitude()));
+                Log.d("lon", String.valueOf(location.getLongitude()));
 
             }
-            public void converttoaddress(Location location){
-                try {
-                    Geocoder geo = new Geocoder(getActivity().getApplicationContext(), Locale.getDefault());
-                    List<Address> addresses = geo.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-                    if (addresses.isEmpty()) {
-                    } else {
-                        if (addresses.size() > 0) {
-                            tv.setText("Address;"+addresses);
-                        }
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
 
             }
-        });   return inflater.inflate(R.layout.fragment_check_in, container, false);
+
+            @Override
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+
+            }
+        };
+        locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER, 0, 0, locationListener);
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        return view;
     }
 }
 
