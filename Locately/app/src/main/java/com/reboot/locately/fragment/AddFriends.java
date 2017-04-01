@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -98,10 +99,11 @@ public class AddFriends extends Fragment {
                 for(Contacts c:temp){
                     if(c.isSelected())
                        // Log.e(c.getName(),c.getPhone());
-                    root.child("groups").child(currentGroup).child("members").child(c.getPhone()).setValue("true");
+                    root.child("circles").child(currentGroup).child("members").child(c.getPhone()).setValue("true");
 
 
                 }
+                Toast.makeText(getContext(),"Group created successfully",Toast.LENGTH_SHORT).show();
             }
         });
         return view;

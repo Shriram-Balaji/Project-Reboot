@@ -45,6 +45,7 @@ public class AllContactsAdapter extends RecyclerView.Adapter<AllContactsAdapter.
                 contactVOList.get(position).setSelected(isChecked);
             }
         });
+        holder.checkBox.setChecked(contactVO.isSelected());
     }
 
     @Override

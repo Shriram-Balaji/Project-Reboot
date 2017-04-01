@@ -10,9 +10,9 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/add_friend"
-        android:icon="@drawable/ic_person_add_white_24dp"
-        android:title="Add Friend"
+        android:id="@+id/message"
+        android:icon="@drawable/ic_speaker_notes_teal_800_24dp"
+        android:title="Messages"
         app:showAsAction="ifRoom" />
 
     <item

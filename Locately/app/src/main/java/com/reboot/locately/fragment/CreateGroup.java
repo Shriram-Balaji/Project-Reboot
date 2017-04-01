@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.google.firebase.database.DatabaseReference;
@@ -113,12 +114,13 @@ public class CreateGroup extends Fragment {
 
                 }
                 group.setMembers(members);
-                DatabaseReference temp1=root.child("groups").push();
+                DatabaseReference temp1=root.child("circles").push();
                 String key=temp1.getKey();
-                root.child("users").child(group.getCreatedBy()).child("groups").child(key).setValue(group.getGroupName());
+                root.child("users").child(group.getCreatedBy()).child("my_circles").child(key).setValue(group.getGroupName());
                 editor.putString("currentGroup",key);
                 editor.apply();
                 temp1.setValue(group);
+                Toast.makeText(getContext(),"Group created successfully",Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -6,19 +6,12 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_account_circle_light_green_500_24dp"
             android:title="Profile" />
-        <item
-            android:id="@+id/nav_new_circle"
-            android:icon="@mipmap/ic_create"
-            android:title="Create New Circle " />
 
         <item
-            android:id="@+id/nav_leave_circle"
-            android:icon="@drawable/ic_highlight_off_red_900_24dp"
-            android:title="Leave a Circle" />
-        <item
-            android:id="@+id/nav_messages"
-            android:icon="@drawable/ic_speaker_notes_teal_800_24dp"
-            android:title="All messages" />
+            android:id="@+id/nav_new_circle"
+            android:icon="@drawable/ic_add_circle_green_a700_24dp"
+            android:title="Create New Circle " />
+
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_blue_grey_800_24dp"
