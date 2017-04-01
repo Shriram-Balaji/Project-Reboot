@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_attach_file_blue_700_24dp.png",
+        "source": "F:\\Chat\\app\\src\\main\\res\\drawable-xhdpi\\ic_attach_file_blue_700_24dp.png"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_send_blue_700_24dp.png",
+        "source": "F:\\Chat\\app\\src\\main\\res\\drawable-xhdpi\\ic_send_blue_700_24dp.png"
+    }
+]

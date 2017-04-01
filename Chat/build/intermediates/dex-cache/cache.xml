@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\af83d8fac38d090eb9a47b854aadcbb8b158fd93\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_b3693181c5c23b4f79d23c8c4545067e303b79c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_53a64a38f764b1cfb84bfb5ca2d68a57f86ca484.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\2c57500d19236a59f4ab7e60e54049ab828b8027\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8bdf5cd702d3d860cd85783a776c26605f557882">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_be071832f3bb7acae64b388698b613b230d70157.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\085dbeaa167c695b10aca9e4af1021b627b57631\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1395232a7eddc612029353b3c953cb0fced71076">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_feee04a36da51a964f056daa6f3eafc00f997d17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\d2684064cefe150805994535404ca752bc03801c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_f9dd93412c646d812465616316b19de08c7cd320.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\76b32b4c49d0cc0691f82d693b979e45b7400cba\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f5bcd9cbfeedc58f493339841a7c5d0347a39f0b">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_ffc4b36ac080bd71018e52cd661eb2ba676dd9a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\ef1e1674d6fac55e260dd858608dcf932bef38b9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cf8c0b6ec17f059cf61ecd101296e16c38562196">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_5e9efb5942ad7d30904cd9fcc3afdd0d17e9b3ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_e63e050e77180936975bfe8541b6bd8dcb18c2cd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\okio-1.6.0_e99fcbfdc1ba2fd452fa8a028fa6ba40b6345ab6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\b19566e8124ef458c6a26953c80f05739ae611e9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="895c63ba9782b04f0c5da69205216f6ec87119eb">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_bee3645d5bd3965fce5f3cae9088332cf2825360.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\ef97dfcfb7c48530c6a657ddbfe7d7aee21e538d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_f0587a25e99c8c2a71037302121c7312b7c1ab48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\92145b8f5ef322e904ca7c91151d814fed5ae255\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_8c2b73ba502cd03f07314323586c25ca6269c6d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_5cde35e3719c36a2d6d320459f9b63fda7a72fe3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\dcd51b59d29ef7ea522e2837d892a8c5f884a3cd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_1df6cee2d2a1e30958db2065f0bfe3273c39b30d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_7cf7ba5b537a5c62dc61d4576d33d8fe30d0fceb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\40f07b509ca18aa513f31b2ba9dbfada69b5b63d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b831d3902674d096189451d46fce219e2c2904b7">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_837658e9b1aecdfb182bfb799262626ad0fd7d5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\19e336726b24eea641ae4b83faa89a56d75eb234\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_99e15fee0bda233cf5080e15993ae9e4777c9da3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\c7a0bcc73f9ae7b0150f3c2b4b23c1b63759ff1c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_9f405319434dd5717372714ffff0433e236b849c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_132e434f425acc105e0ed0b90efdb168b1500814.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\068d97397cd9ccd97e44ff339921e5b1def42a64\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_d575581e6be31a6738197c02547b1e6f5b31f3e1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\575b31f90a93d920dab47c0087c2b573b2cb3469\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_212f906bbd05fc0edaf7f8a50c227bc18089a29e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\0b372c64109af2a23e77d51aab784d5422a2586f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_0c6a725ca40e71302acb400f7ae816baec964472.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\9c5c64ddd1c20ca39d6f4778d51c2680da287212\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_932d6a02dfa947a87f9b720c651215d8a0af373f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\cadfb58293b567bc21b57da1daf912dfa56f2ff4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_ec3484092331465e15c5ae6e3272fec557e104d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.twitter\twitter-text\1.13.0\78415b95ae3184c5926d593feab64bfc0b73b2dd\twitter-text-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="78415b95ae3184c5926d593feab64bfc0b73b2dd">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\twitter-text-1.13.0_a9f33eafe4f5349358d339a877e16d83b1a35d40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\glide-3.7.0_5104f049d3fdac8bc376a8b240c5af504a50a2f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\403a771e076905b65ef440d254848af794267bc1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9d5ae39b0de30b0f73c815513024feff3542f36e">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_af99eba78b49088c40658984a2ac146f470afd1f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\c248b9fff18f31f5a0615899b516d8d3c616b341\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_bf412c4763850eaf871856f035a2457013bf389d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\a2456968ce05028d083e5b4c3ec8f07e07e38fb3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0558e5b6c171bd6719581340f9ac6be4af5ae265">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_524b00186622b81e80af1d921c7d9ecb253266bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\08310623bc42633879304188d8eda62d5296720f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c6047a34af07d6ec4e950ba1dc70ce23ac65ecaa">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_081be47db7486c804d1691b472ff35a32eb46a9b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\Chat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="F:\Chat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0c9fc1b4ea199e70d6b1c92a94f6aea2e896aeb0\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\1ce34be95011c4a4e1db8c91261d98646d6707da\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_e62ff9f5308e7319afc6253788c6e0db62f1ba8a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\0d2919fd3f1805de8c6a833c6714eea53fa9480b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_535911de06d1ba0da9c8fbf4156992eccb518365.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\b14567f0e5ac220b8d3a057de56ad5e608c01f04\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_b0ec91ed2243dffc8e819829ef2adb8d5211c8c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\1ac91139866c9430635a637767e48872898d0475\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_30992b2b420a73bc8f5dd02373e70d5db1c4ae22.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_17cf921f173b97ddb75a4f8850b4a666a638bb6d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\934839afa6d1ac9ae3cc66607d83c557b7d7f5ce\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7308fa2037dac339ea04b90cdd17e87f835ea294">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_193ba2a5572c99170c2be0564f549a891c677dda.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\Chat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e536ea589099879f6422b43e76275a4a067cdfc5">
+        <dex dex="F:\Chat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7e2158780a5c00d24b1033f5a9991395f0c5318f\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\gson-2.6.1_ac85aa0b8dcb48e71d02b200616efb9ecd5a6ab3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\793b358b0a47ad54a6bcc9cf192ab5f58b6e4239\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="343ad59d9fb3bbf6ab99baafad859eb4b0fecc02">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_b12dd5bdf7070247c54c540abd43766a93fb13d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Harold Prabhu\.android\build-cache\25a569889b285322d1211c3aa0d036bfef5d0834\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a10ed1f1cff990ef081263ad33f13dc6c207eb4e">
+        <dex dex="F:\Chat\app\build\intermediates\pre-dexed\debug\classes_39188d3c45beea1e2dd0ae982f0e922c6b930200.jar" />
+    </item>
+
+</items>

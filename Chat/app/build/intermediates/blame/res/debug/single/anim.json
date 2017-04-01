@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\92145b8f5ef322e904ca7c91151d814fed5ae255\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\tw__slide_out.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\934839afa6d1ac9ae3cc66607d83c557b7d7f5ce\\output\\res\\anim\\tw__slide_out.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\92145b8f5ef322e904ca7c91151d814fed5ae255\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\92145b8f5ef322e904ca7c91151d814fed5ae255\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_left.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\085dbeaa167c695b10aca9e4af1021b627b57631\\output\\res\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\92145b8f5ef322e904ca7c91151d814fed5ae255\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\tw__accelerate_cubic.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\934839afa6d1ac9ae3cc66607d83c557b7d7f5ce\\output\\res\\anim\\tw__accelerate_cubic.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\d0644cc8e895be8a293dba1295bc8ae63ca8b0bd\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "F:\\Chat\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_right.xml",
+        "source": "C:\\Users\\Harold Prabhu\\.android\\build-cache\\085dbeaa167c695b10aca9e4af1021b627b57631\\output\\res\\anim\\slide_in_right.xml"
+    }
+]
