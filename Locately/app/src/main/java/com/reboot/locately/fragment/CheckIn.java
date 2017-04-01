@@ -79,6 +79,7 @@ public class CheckIn extends Fragment {
         };
         locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER, 0, 0, locationListener);
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        Log.d("lat", String.valueOf(location.getLatitude()));
         return view;
     }
 }

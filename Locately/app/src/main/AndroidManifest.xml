@@ -2,11 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.reboot.locately">
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:name=".common.Locately"
@@ -31,7 +29,6 @@
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         -->
 
-
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_drawer"
@@ -48,8 +45,8 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".activity.CheckinActivity"></activity>
     </application>
-
-
 
 </manifest>
