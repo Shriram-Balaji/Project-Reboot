@@ -23,6 +23,9 @@ import com.reboot.locately.R;
 import com.reboot.locately.common.Users;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
+import com.reboot.locately.common.Group;
+
+import java.util.HashMap;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -33,6 +36,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
     DatabaseReference ref;
     EditText mFirstName,mLastName,mPhoneNumber;
     TextView mLogoTextView;
+
     String phone;
 
     public static String TAG = "RegistrationActivity";
@@ -54,7 +58,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
 
         //Database Ref
         database = FirebaseDatabase.getInstance();
-        ref = database.getReference("users");
+        ref = database.getReference();
         Log.d(TAG,ref.toString());
 
         //View Declarations
@@ -95,7 +99,17 @@ public class UserRegistrationActivity extends AppCompatActivity {
                     user.setBattery_percent("");
                     user.setLatitude("");
                     user.setLongitude("gt");
-                    ref.child(phoneNumber).setValue(user);
+                    ref.child("users").child(phoneNumber).setValue(user);
+                    DatabaseReference temp=ref.child("circles").push();
+                    String key=temp.getKey();
+                    HashMap<String,String> cur=new HashMap<String,String>();
+                    cur.put(phoneNumber, String.valueOf(true));
+                    Group group=new Group(phoneNumber,"Friends",cur);
+                    ref.child("circles").child(key).setValue(group);
+                    ref.child("users").child(phoneNumber).child("my_circles").child(key).setValue(group.getGroupName());
+                    editor = user_prefs.edit();
+                    editor.putString("currentGroup", key);
+                    editor.apply();
                     Toast.makeText(getApplicationContext(), "Details Saved", Toast.LENGTH_LONG).show();
                     goToMainActivity();
 
@@ -117,6 +131,14 @@ public class UserRegistrationActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mFirstName.getText().equals("")){
+                    Toast.makeText(getApplicationContext(),"First name can\'t be empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(mPhoneNumber.getText().equals("")){
+                    Toast.makeText(getApplicationContext(),"Phone number can\'t be empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 AuthConfig.Builder builder = new AuthConfig.Builder();
                 builder.withAuthCallBack(authCallback);
                 builder.withPhoneNumber(phone);

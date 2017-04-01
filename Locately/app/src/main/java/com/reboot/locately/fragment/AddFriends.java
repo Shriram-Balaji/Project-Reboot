@@ -103,7 +103,7 @@ public class AddFriends extends Fragment {
 
 
                 }
-                Toast.makeText(getContext(),"Group created successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Friend Added Successfully",Toast.LENGTH_SHORT).show();
             }
         });
         return view;

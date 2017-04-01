@@ -7,12 +7,19 @@ import java.util.HashMap;
  */
 
 public class Group{
-    private String createdAt;
     private String createdBy;
     private String groupName;
     private HashMap<String,String> members;
+    public Group(){
 
-    public String getCreatedAt(){return createdAt;}
+    }
+
+    public Group(String createdBy, String groupName, HashMap<String, String> members) {
+        this.createdBy = createdBy;
+        this.groupName = groupName;
+        this.members = members;
+    }
+
 
     public String getCreatedBy(){return createdBy;}
 
@@ -20,9 +27,6 @@ public class Group{
 
     public HashMap<String,String> getMembers(){return members;}
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
 
     public void setCreatedBy(String createdBy){this.createdBy=createdBy;}
 

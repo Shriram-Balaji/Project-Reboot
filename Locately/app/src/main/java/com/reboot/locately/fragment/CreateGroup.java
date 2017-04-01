@@ -102,16 +102,20 @@ public class CreateGroup extends Fragment {
             public void onClick(View v) {
                 Group group=new Group();
                 group.setGroupName(editText.getText().toString());
+                if(group.getGroupName().equals("")){
+                    Toast.makeText(getContext(),"Group name can\'t be empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 SharedPreferences user_prefs = getContext().getSharedPreferences("user_pref", MODE_PRIVATE);
                 group.setCreatedBy(user_prefs.getString("phoneNumber",""));
                 SharedPreferences.Editor editor = user_prefs.edit();
 
                 HashMap<String,String> members= new HashMap  <String, String>();
                 List<Contacts> temp=contactAdapter.getContactsList();
+                members.put(user_prefs.getString("phoneNumber",""),"true");
                 for(Contacts c:temp){
                     if(c.isSelected())
                         members.put(c.getPhone(),"true");
-
                 }
                 group.setMembers(members);
                 DatabaseReference temp1=root.child("circles").push();

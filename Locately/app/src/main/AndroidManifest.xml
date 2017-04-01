@@ -37,6 +37,11 @@
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".activity.CheckinActivity">
+            
+        </activity>
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDlzUkABoUCrgocOsK0cjwUmU16xxjLrhE" />
