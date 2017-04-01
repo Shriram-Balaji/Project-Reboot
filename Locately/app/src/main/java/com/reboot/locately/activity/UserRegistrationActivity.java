@@ -82,19 +82,12 @@ public class UserRegistrationActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = user_prefs.edit();
 
                 //always set the boolean to false initially
-
                 //check whether user logged out or not
-
                     editor.putBoolean("login",true);
                     editor.putString("phoneNumber",phoneNumber);
                     editor.apply();
                     Log.d(TAG,phoneNumber);
-                    Users user = new Users();
-                    user.setFirst_name(mFirstName.getText().toString());
-                    user.setLast_name(mLastName.getText().toString());
-                    user.setBattery_percent("");
-                    user.setLatitude("");
-                    user.setLongitude("gt");
+                    Users user = new Users(mFirstName.getText().toString(),mLastName.getText().toString(),"","","","");
                     ref.child(phoneNumber).setValue(user);
                     Toast.makeText(getApplicationContext(), "Details Saved", Toast.LENGTH_LONG).show();
                     goToMainActivity();

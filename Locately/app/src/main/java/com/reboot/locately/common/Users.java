@@ -5,31 +5,17 @@ import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 
 public class Users {
-
-
-
-
-    private String first_name,last_name,latitude,longitude,battery_percent,phone_number;
-
-
+   public String first_name,last_name,latitude,longitude,battery_level,phone_number;
 
     public Users(){
     }
 
-    public Users(String first_name, String last_name, String latitude, String longitude, String battery_percent, String phone_number) {
+    public Users(String first_name, String last_name, String latitude, String longitude, String battery_level, String phone_number) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.battery_percent = battery_percent;
-        this.phone_number = phone_number;
-    }
-
-    public String getPhone_number() {
-        return phone_number;
-    }
-
-    public void setPhone_number(String phone_number) {
+        this.battery_level = battery_level;
         this.phone_number = phone_number;
     }
 
@@ -65,13 +51,19 @@ public class Users {
         this.longitude = longitude;
     }
 
-    public String getBattery_percent() {
-        return battery_percent;
+    public String getBattery_level() {
+        return battery_level;
     }
 
-    public void setBattery_percent(String battery_percent) {
-        this.battery_percent = battery_percent;
+    public void setBattery_level(String battery_level) {
+        this.battery_level = battery_level;
     }
 
+    public String getPhone_number() {
+        return phone_number;
+    }
 
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
 }

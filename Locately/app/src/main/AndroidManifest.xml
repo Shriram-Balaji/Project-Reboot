@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.reboot.locately">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.reboot.locately">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -25,7 +27,8 @@
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="ccbe0f194733825b0bba8201c1b132b406a1e579" />
+            android:value="ccbe0f194733825b0bba8201c1b132b406a1e579"
+            tools:replace="android:value"/>
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

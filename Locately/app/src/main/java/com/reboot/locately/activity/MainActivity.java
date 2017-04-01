@@ -102,7 +102,8 @@ public class MainActivity extends AppCompatActivity
                 Log.d("batterypct", String.valueOf(batteryPct));
             }
         };
-        Intent intent = this.registerReceiver(b, ifilter);
+
+
 //        int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
 //        boolean isCharging = false;
 //        if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
