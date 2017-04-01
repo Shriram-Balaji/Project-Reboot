@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity
                     fragment2 = new AddFriends();
                 fragment = fragment2;
                 break;
-            case R.id.check_in:
+            case R.id.add_friend:
                 if(fragment3==null)
                     fragment3 = new CheckIn();
                 fragment = fragment3;
