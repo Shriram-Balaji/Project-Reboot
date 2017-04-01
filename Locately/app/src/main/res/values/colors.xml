@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#0087ff</color>
-    <color name="colorPrimaryDark">#00549f</color>
-    <color name="colorAccent">#773dff</color>
+    <color name="colorPrimaryDark">#0065bf</color>
+    <color name="colorAccent">#0ed49f</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000</color>
+    <color name="textColorPrimary">#4c95d6</color>
+    <color name="textColorPrimaryDark">#7a7a7a</color>
+    <color name="buttonGreen">#01af83</color>
+    <color name="signInColor">#e1dbdd</color>
+    <color name="greyText">#4e4e4e</color>
+    <color name="lightblue">#c2e8ff</color>
+    <color name="windowBackground">#eeeeee</color>
+    <color name="light_grey">#eee</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="darker_gray">#3e3e3e</color>
+
+
 </resources>

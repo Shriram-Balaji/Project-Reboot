@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_account_circle_deep_purple_a700_48dp"
+        android:padding="10dp"
+        android:id="@+id/friend_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/friend_name"
+        android:hint="USERNAME"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/textColorPrimary"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/friend_icon"
+        android:layout_toEndOf="@+id/friend_icon"
+        android:layout_alignBottom="@+id/friend_icon" />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/friend_last_seen"
+        android:hint="Last Seen At"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textSize="12sp"
+        android:layout_alignBottom="@+id/friend_name"
+        android:layout_toRightOf="@+id/friend_icon"
+        android:layout_toEndOf="@+id/friend_icon"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_battery_charging_60_green_a400_24dp"
+        android:rotation="90"
+        android:layout_toRightOf="@+id/friend_name"
+        android:padding="10dp"
+        android:id="@+id/friend_battery"
+        android:layout_alignBottom="@+id/friend_name"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/friend_battery"
+        android:id="@+id/friend_battery_percentage"
+        android:paddingTop="20dp"
+        android:textSize="15sp"
+        android:paddingBottom="20dp"
+        android:textColor="@color/greyText"
+        android:text="53 %"
+        android:gravity="center"
+        android:layout_alignBottom="@+id/friend_battery"
+        android:layout_alignParentTop="true"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_message_white_18dp"
+        android:background="@drawable/msg_button_background"
+        android:padding="10dp"
+        android:id="@+id/messageButton"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_below="@+id/friend_name"
+        android:layout_toRightOf="@+id/friend_icon"
+        android:layout_toEndOf="@+id/friend_icon"
+        android:layout_marginTop="15dp"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_call_white_18dp"
+        android:background="@drawable/call_button_background"
+        android:padding="10dp"
+        android:foregroundGravity="center"
+        android:id="@+id/callButton"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_alignTop="@+id/messageButton"
+        android:layout_toRightOf="@+id/messageButton"
+        android:layout_toEndOf="@+id/messageButton"/>
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/zoom_btn_background"
+        android:src="@drawable/ic_my_location_white_18dp"
+        android:padding="10dp"
+        android:id="@+id/navigateButton"
+        android:layout_alignTop="@+id/callButton"
+        android:layout_toRightOf="@+id/callButton"
+        android:layout_toEndOf="@+id/callButton"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"/>
+
+
+</RelativeLayout>
