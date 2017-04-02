@@ -75,6 +75,10 @@ public class CreateGroup extends Fragment {
                             null);
                     if (phoneCursor.moveToNext()) {
                         String phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                        phoneNumber.replace(" ","");
+                        if(!phoneNumber.startsWith("+")){
+                            phoneNumber="+91"+phoneNumber;
+                        }
                         contactVO.setPhone(phoneNumber);
                     }
 
@@ -107,23 +111,26 @@ public class CreateGroup extends Fragment {
                     return;
                 }
                 SharedPreferences user_prefs = getContext().getSharedPreferences("user_pref", MODE_PRIVATE);
-                group.setCreatedBy(user_prefs.getString("phoneNumber",""));
+                String phoneNumber=user_prefs.getString("phoneNumber","");
+                group.setCreatedBy(phoneNumber);
                 SharedPreferences.Editor editor = user_prefs.edit();
 
-                HashMap<String,String> members= new HashMap  <String, String>();
+                HashMap<String,String> invitations= new HashMap<>();
                 List<Contacts> temp=contactAdapter.getContactsList();
-                members.put(user_prefs.getString("phoneNumber",""),"true");
-                for(Contacts c:temp){
-                    if(c.isSelected())
-                        members.put(c.getPhone(),"true");
-                }
-                group.setMembers(members);
                 DatabaseReference temp1=root.child("circles").push();
                 String key=temp1.getKey();
+                for(Contacts c:temp){
+                    if(c.isSelected()){
+                        invitations.put(c.getPhone(),"true");
+                        root.child("users").child(c.getPhone()).child("my_invitations").child(key).setValue(phoneNumber);
+                    }
+                }
+                group.setInvitations(invitations);
+                temp1.setValue(group);
                 root.child("users").child(group.getCreatedBy()).child("my_circles").child(key).setValue(group.getGroupName());
+                root.child("circles").child(key).child("members").child(phoneNumber).setValue("true");
                 editor.putString("currentGroup",key);
                 editor.apply();
-                temp1.setValue(group);
                 Toast.makeText(getContext(),"Group created successfully",Toast.LENGTH_SHORT).show();
             }
         });

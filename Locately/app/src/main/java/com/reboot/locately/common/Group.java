@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class Group{
     private String createdBy;
     private String groupName;
-    private HashMap<String,String> members;
+    private HashMap<String,String> invitations;
     public Group(){
 
     }
@@ -17,20 +17,23 @@ public class Group{
     public Group(String createdBy, String groupName, HashMap<String, String> members) {
         this.createdBy = createdBy;
         this.groupName = groupName;
-        this.members = members;
+        this.invitations = members;
     }
 
+    public HashMap<String, String> getInvitations() {
+        return invitations;
+    }
+
+    public void setInvitations(HashMap<String, String> invitations) {
+        this.invitations = invitations;
+    }
 
     public String getCreatedBy(){return createdBy;}
 
     public String getGroupName(){return groupName;}
 
-    public HashMap<String,String> getMembers(){return members;}
-
-
     public void setCreatedBy(String createdBy){this.createdBy=createdBy;}
 
     public void setGroupName(String group_name){this.groupName=group_name;}
-    public void setMembers(HashMap<String,String> members){this.members=members;}
 
 }

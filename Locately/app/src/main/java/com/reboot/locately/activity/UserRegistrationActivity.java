@@ -88,18 +88,21 @@ public class UserRegistrationActivity extends AppCompatActivity {
                 //always set the boolean to false initially
 
                 //check whether user logged out or not
-
                     editor.putBoolean("login",true);
                     editor.putString("phoneNumber",phoneNumber);
                     editor.apply();
                     Log.d(TAG,phoneNumber);
-                    Users user = new Users();
-                    user.setFirst_name(mFirstName.getText().toString());
-                    user.setLast_name(mLastName.getText().toString());
-                    user.setBattery_percent("");
-                    user.setLatitude("");
-                    user.setLongitude("gt");
-                    ref.child("users").child(phoneNumber).setValue(user);
+//                    Users user = new Users();
+//                    user.setFirst_name(mFirstName.getText().toString());
+//                    user.setLast_name(mLastName.getText().toString());
+//                    user.setBattery_percent("");
+//                    user.setLatitude("");
+//                    user.setLongitude("gt");
+                    ref.child("users").child(phoneNumber).child("first_name").setValue(mFirstName.getText());
+                    ref.child("users").child(phoneNumber).child("last_name").setValue(mLastName.getText());
+                    ref.child("users").child(phoneNumber).child("battery_percent").setValue("0");
+                    ref.child("users").child(phoneNumber).child("latitude").setValue("0");
+                    ref.child("users").child(phoneNumber).child("longitude").setValue("0");
                     DatabaseReference temp=ref.child("circles").push();
                     String key=temp.getKey();
                     HashMap<String,String> cur=new HashMap<String,String>();
@@ -112,7 +115,6 @@ public class UserRegistrationActivity extends AppCompatActivity {
                     editor.apply();
                     Toast.makeText(getApplicationContext(), "Details Saved", Toast.LENGTH_LONG).show();
                     goToMainActivity();
-
 
             }
 

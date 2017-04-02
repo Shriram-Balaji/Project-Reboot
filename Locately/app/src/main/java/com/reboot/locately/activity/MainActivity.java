@@ -38,6 +38,7 @@ import com.reboot.locately.common.LocationFetcher;
 import com.reboot.locately.fragment.AddFriends;
 import com.reboot.locately.fragment.CheckIn;
 import com.reboot.locately.fragment.CreateGroup;
+import com.reboot.locately.fragment.InvitationFragment;
 import com.reboot.locately.fragment.MyCircle;
 import com.reboot.locately.fragment.ProfileFragment;
 import com.reboot.locately.fragment.SettingsFragment;
@@ -230,6 +231,7 @@ public class MainActivity extends AppCompatActivity
                 // ...
             }
         };
+        Log.d("TAG",user_prefs.getString("phoneNumber", ""));
         root.child("users").child(user_prefs.getString("phoneNumber", "")).child("my_circles").addValueEventListener(postListener);
     }
 
@@ -278,8 +280,13 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction transaction = manager.beginTransaction();
             transaction.replace(R.id.main_container, fragment);
             transaction.commit();
+        } else if (id == R.id.nav_accept_invitation) {
+            Fragment fragment = new InvitationFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.main_container, fragment);
+            transaction.commit();
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
