@@ -7,13 +7,10 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class Users {
 
 
+    private String first_name, last_name, latitude, longitude, battery_percent, phone_number;
 
 
-    private String first_name,last_name,latitude,longitude,battery_percent,phone_number;
-
-
-
-    public Users(){
+    public Users() {
     }
 
     public Users(String first_name, String last_name, String latitude, String longitude, String battery_percent, String phone_number) {

@@ -68,6 +68,10 @@ public class AddFriends extends Fragment {
                             null);
                     if (phoneCursor.moveToNext()) {
                         String phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                        phoneNumber.replace(" ","");
+                        if(!phoneNumber.startsWith("+")){
+                            phoneNumber="+91"+phoneNumber;
+                        }
                         contactVO.setPhone(phoneNumber);
                     }
 
@@ -97,10 +101,10 @@ public class AddFriends extends Fragment {
                 String currentGroup= user_prefs.getString("currentGroup","");
                 List<Contacts> temp=contactAdapter.getContactsList();
                 for(Contacts c:temp){
-                    if(c.isSelected())
-                       // Log.e(c.getName(),c.getPhone());
-                    root.child("circles").child(currentGroup).child("members").child(c.getPhone()).setValue("true");
-
+                    if(c.isSelected()) {
+                        root.child("circles").child(currentGroup).child("invitations").child(c.getPhone()).setValue("true");
+                        root.child("users").child(c.getPhone()).child("my_invitations").child(user_prefs.getString("currentGroup","")).setValue(user_prefs.getString("phoneNumber",""));
+                    }
 
                 }
                 Toast.makeText(getContext(),"Friend Added Successfully",Toast.LENGTH_SHORT).show();

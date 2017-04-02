@@ -12,6 +12,12 @@
             android:icon="@drawable/ic_add_circle_green_a700_24dp"
             android:title="Create New Circle " />
 
+        <item
+            android:id="@+id/nav_accept_invitation"
+            android:icon="@drawable/ic_add_circle_green_a700_24dp"
+            android:title="Circle Invites" />
+
+
 
         <item
             android:id="@+id/nav_settings"

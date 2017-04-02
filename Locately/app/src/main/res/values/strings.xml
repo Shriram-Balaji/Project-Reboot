@@ -16,4 +16,5 @@
     <string name="last_name">LAST NAME</string>
     <string name="first_name">FIRST NAME</string>
     <string name="mobile_number">MOBILE NUMBER</string>
+    <string name="complete_action_with">Complete Action Using</string>
 </resources>

@@ -38,6 +38,8 @@ import com.reboot.locately.common.LocationFetcher;
 import com.reboot.locately.fragment.AddFriends;
 import com.reboot.locately.fragment.CheckIn;
 import com.reboot.locately.fragment.CreateGroup;
+import com.reboot.locately.fragment.GroupChat;
+import com.reboot.locately.fragment.InvitationFragment;
 import com.reboot.locately.fragment.MyCircle;
 import com.reboot.locately.fragment.ProfileFragment;
 import com.reboot.locately.fragment.SettingsFragment;
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity
     Fragment fragment1 = null, fragment2 = null, fragment3 = null, fragment4 = null;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
+    private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
+
 
     // TextView mLogoTextView;
     @Override
@@ -109,7 +113,6 @@ public class MainActivity extends AppCompatActivity
         LocationFetcher locationFetcher = new LocationFetcher(this);
         locationFetcher.fetchCellLocation();
         // Battery status receiver
-        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         BroadcastReceiver b = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -133,7 +136,41 @@ public class MainActivity extends AppCompatActivity
 
             }
         };
+
+        registerReceiver(b, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+
+        prefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+
+                {
+                    if (key.contentEquals("currentGroup")) {
+
+                        MyCircle fragment = new MyCircle();
+                        FragmentManager manager = getSupportFragmentManager();
+                        FragmentTransaction transaction = manager.beginTransaction();
+                        transaction.replace(R.id.main_container, fragment);
+                        transaction.commit();
+
+
+
+                    }
+
+                    // Log.i("Settings key changed: ", "" + prefs.getString(key, ""));
+
+
+                }
+
+                user_prefs.registerOnSharedPreferenceChangeListener(prefListener);
+
+//                                             FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                        ft.detach(MainFragment.this).attach(MainFragment.this).commit();
+//
+            }
+
+        };
     }
+
+
 
     protected void selectFragment(MenuItem item) {
         item.setChecked(true);
@@ -146,13 +183,12 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.message:
                 if (fragment2 == null)
-                    fragment2 = new AddFriends();
+                    fragment2 = new GroupChat();
                 fragment = fragment2;
                 break;
             case R.id.add_friend:
-
                 if(fragment3==null)
-                    fragment3 = new CheckIn();
+                    fragment3 = new AddFriends();
                 fragment = fragment3;
                 break;
 //                    case R.id.leave_circle:
@@ -230,6 +266,7 @@ public class MainActivity extends AppCompatActivity
                 // ...
             }
         };
+        Log.d("TAG",user_prefs.getString("phoneNumber", ""));
         root.child("users").child(user_prefs.getString("phoneNumber", "")).child("my_circles").addValueEventListener(postListener);
     }
 
@@ -243,7 +280,6 @@ public class MainActivity extends AppCompatActivity
                 SharedPreferences.Editor editor = user_prefs.edit();
                 editor.putString("currentGroup", keyList.get(i));
                 editor.apply();
-
             }
 
             @Override
@@ -279,9 +315,29 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.main_container, fragment);
             transaction.commit();
         }
-
+        else if (id == R.id.nav_accept_invitation) {
+            Fragment fragment = new InvitationFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.main_container, fragment);
+            transaction.commit();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        getSharedPreferences("user_pref", MODE_PRIVATE).unregisterOnSharedPreferenceChangeListener(prefListener);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getSharedPreferences("user_pref", MODE_PRIVATE).registerOnSharedPreferenceChangeListener(prefListener);
+
     }
 }

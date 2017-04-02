@@ -26,6 +26,7 @@ import com.twitter.sdk.android.core.TwitterCore;
 import com.reboot.locately.common.Group;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -93,23 +94,30 @@ public class UserRegistrationActivity extends AppCompatActivity {
                     editor.putString("phoneNumber",phoneNumber);
                     editor.apply();
                     Log.d(TAG,phoneNumber);
-                    Users user = new Users();
-                    user.setFirst_name(mFirstName.getText().toString());
-                    user.setLast_name(mLastName.getText().toString());
-                    user.setBattery_percent("");
-                    user.setLatitude("");
-                    user.setLongitude("gt");
-                    ref.child("users").child(phoneNumber).setValue(user);
-                    DatabaseReference temp=ref.child("circles").push();
+//                    Users user = new Users();
+//                    user.setFirst_name(mFirstName.getText().toString());
+//                    user.setLast_name(mLastName.getText().toString());
+//                    user.setBattery_percent("");
+//                    user.setLatitude("");
+//                    user.setLongitude("");
+                Map<String,Object> taskMap = new HashMap<String,Object>();
+                taskMap.put("first_name",mFirstName.getText().toString());
+                taskMap.put("last_name",mLastName.getText().toString());
+
+                if(ref.child("users").child(phoneNumber)==null)
+                    ref.child("users").child(phoneNumber).updateChildren(taskMap);
+
+                DatabaseReference temp=ref.child("circles").push();
                     String key=temp.getKey();
                     HashMap<String,String> cur=new HashMap<String,String>();
                     cur.put(phoneNumber, String.valueOf(true));
-                    Group group=new Group(phoneNumber,"Friends",cur);
+                    Group group=new Group(phoneNumber,"Friends",null,cur);
                     ref.child("circles").child(key).setValue(group);
                     ref.child("users").child(phoneNumber).child("my_circles").child(key).setValue(group.getGroupName());
                     editor = user_prefs.edit();
                     editor.putString("currentGroup", key);
-                    editor.apply();
+                    Log.d("TAG",key);
+                    editor.commit();
                     Toast.makeText(getApplicationContext(), "Details Saved", Toast.LENGTH_LONG).show();
                     goToMainActivity();
 

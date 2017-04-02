@@ -16,8 +16,10 @@
     <Button
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:text="Add Friends"
-        android:layout_width="wrap_content"
+        android:background="@drawable/btn_rounded_edges"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Add Friends"
         android:id="@+id/add_friend_button"/>
 </RelativeLayout>

@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/sinch-android-rtc-3.8.0-VIDEO-SNAPSHOT" />
+            <option value="$PROJECT_DIR$/sinch-android-rtc-3.9.14" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

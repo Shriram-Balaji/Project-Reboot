@@ -1,5 +1,6 @@
 package com.reboot.locately.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
@@ -111,5 +112,13 @@ public class CheckinActivity extends AppCompatActivity {
         this.finish();
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(CheckinActivity.this,MainActivity.class);
+        startActivity(intent);
+//        intent.putExtra("result","Back Press");
+//        setResult(Activity.RESULT_CANCELED,intent);
+        finish();
+        super.onBackPressed();
+    }
 }
