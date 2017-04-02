@@ -36,7 +36,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.reboot.locately.R;
 import com.reboot.locately.common.LocationFetcher;
 import com.reboot.locately.fragment.AddFriends;
-import com.reboot.locately.fragment.CheckIn;
 import com.reboot.locately.fragment.CreateGroup;
 import com.reboot.locately.fragment.InvitationFragment;
 import com.reboot.locately.fragment.MyCircle;
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.add_friend:
 
                 if(fragment3==null)
-                    fragment3 = new CheckIn();
+                    fragment3 = new AddFriends();
                 fragment = fragment3;
                 break;
 //                    case R.id.leave_circle:

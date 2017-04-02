@@ -16,8 +16,11 @@
     <Button
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
+        android:background="@color/buttonGreen"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:text="Add Friends"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/add_friend_button"/>
 </RelativeLayout>

@@ -4,20 +4,36 @@
     android:layout_width="match_parent">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="test"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Received Invitation"
         android:id="@+id/invitation_message"
-        android:textSize="20sp"/>
+        android:textSize="15sp"/>
     <Button
-        android:layout_toLeftOf="@+id/reject_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_rounded_edges"
         android:id="@+id/accept_button"
-        android:text="Accept"/>
+        android:text="Accept"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_alignBaseline="@+id/reject_button"
+        android:layout_alignBottom="@+id/reject_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
     <Button
-        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_red_edge"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/reject_button"
-        android:text="Reject"/>
+        android:text="Reject"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/invitation_message"
+        android:layout_toRightOf="@+id/accept_button"
+        android:layout_toEndOf="@+id/accept_button"/>
 </RelativeLayout>
