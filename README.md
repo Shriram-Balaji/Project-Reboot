@@ -5,3 +5,10 @@
          / /  /  __/ /_/ / /_/ / /_/ / /_  
         /_/   \___/_.___/\____/\____/\__/  
 
+Team Reboot is a team of six developers.
+  Shri Ram Balaji
+  Naveen
+  Aravinth
+  Dillan Fernando
+  Harold V Prabhu
+  Aishwarya
